@@ -4,7 +4,11 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             BackgroundImage()
-            FiveByFiveGrid()
+            VStack {
+                Image("rabbit")
+                FiveByFiveGrid()
+
+            }
                 
                 
         }

@@ -7,16 +7,22 @@ struct ContentView: View {
         ZStack {
             BackgroundImage()
             VStack {
-                Image("rabbit-final")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100)
-                    .padding()
-
+                Rabbit()
                 FiveByFiveGrid()
                 
             }
         }
 
+    }
+}
+
+// rabbit
+struct Rabbit: View {
+    var body: some View {
+        Image("rabbit-final")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 100)
+            .padding(.bottom, 10)
     }
 }

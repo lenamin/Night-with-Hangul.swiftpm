@@ -18,9 +18,31 @@ struct BackgroundImage: View {
     }
 }
 
+// Rounded Rectangle with Border
+struct RoundedRectangleBorder: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 5)
+            .stroke(lineWidth: 3)
+            .foregroundColor(.yellow)
+            .frame(width: 100, height: 100)
+            .background(.black)
+            .opacity(0.5)
+    }
+}
+
+// Rounded Rectangle Filled
+struct RoundedRectangleFilled: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 5)
+            .foregroundColor(.yellow)
+            .frame(width: 100, height: 100)
+    }
+}
+
+
 // 5*5 Grid for moving
 struct FiveByFiveGrid: View {
-
+    @State var squareNumber = 0..<25
     let column = [GridItem(.fixed(100), spacing: nil, alignment: nil),
                   GridItem(.fixed(100), spacing: nil, alignment: nil),
                   GridItem(.fixed(100), spacing: nil, alignment: nil),
@@ -29,25 +51,18 @@ struct FiveByFiveGrid: View {
     
     
     var body: some View {
+        
         LazyVGrid(columns: column, alignment: .center, spacing: 10) {
             
-            ForEach((0..<25), id: \.self) { item in
-                Button(action: {}) {
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(lineWidth: 3)
-                        .foregroundColor(.yellow)
-                        .frame(width: 100, height: 100)
-                        .background(.black)
-                        .opacity(0.5)
-                }
-
+            ForEach(squareNumber, id: \.self) { item in
+                Button(action: {RoundedRectangleFilled()}) {
+                    RoundedRectangleBorder()
+                }.buttonStyle(PlainButtonStyle())
             }
-        }
+            
+        } // Loop
         .padding(20)
     }
-    
-    
-    
     
 }
 

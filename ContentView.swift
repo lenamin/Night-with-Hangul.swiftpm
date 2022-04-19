@@ -7,7 +7,12 @@ struct ContentView: View {
         ZStack {
             BackgroundImage()
             VStack {
-                Image("rabbit")
+                Image("rabbit-final")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100)
+                    .padding()
+
                 FiveByFiveGrid()
                 
             }

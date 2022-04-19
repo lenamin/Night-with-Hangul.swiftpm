@@ -4,11 +4,8 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             BackgroundImage()
-            HStack {
-                Spacer()
-                FiveByFiveGrid()
-                Spacer()
-            }
+            FiveByFiveGrid()
+                
                 
         }
 //            .overlay(Image("sky-pad")

@@ -89,29 +89,27 @@ struct FiveByFiveGrid: View {
                     .onTapGesture {
                         selectedItem = item
                     }
-            
 //                Button(action: {didSelected.toggle()
 //                }) {
 //                    RoundedRectangleBorder()
 //                }
-
             }
         } // Loop
              */
-            
         }
-            
         .padding(20)
     }
-    
 }
 
+// button which shows what users tap
+// if users tap specific position, then append it to array positions
 struct GridColumn: View {
     let position: Positions
     @Binding var positions: [Positions]
     
     var body: some View {
         Button(action: {
+
             if positions.contains(position) {
                 positions.removeAll { $0 == position }
             } else {
@@ -121,9 +119,7 @@ struct GridColumn: View {
             RoundedRectangleBorder()
                 .background(positions.contains(position) ? .yellow : .clear)
         }
-        
     }
-    
 }
 
 // indexing Grid

@@ -21,21 +21,29 @@ struct BackgroundImage: View {
 // Rounded Rectangle with Border
 struct RoundedRectangleBorder: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 5)
-            .stroke(lineWidth: 3)
-            .foregroundColor(.yellow)
-            .frame(width: 100, height: 100)
-            .background(.black)
-            .opacity(0.5)
+//            RoundedRectangle(cornerRadius: 5)
+//                .stroke(lineWidth: 3)
+//                .foregroundColor(.yellow)
+//                .frame(width: 100, height: 100)
+//                .background(.black)
+//                .opacity(0.5)
+        Image("RectangleBorder")
     }
 }
 
 // Rounded Rectangle Filled
-struct RoundedRectangleFilled: View {
+struct RoundedRectangleFilledYellow: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 5)
-            .foregroundColor(.yellow)
-            .frame(width: 100, height: 100)
+//        RoundedRectangle(cornerRadius: 5)
+//            .foregroundColor(.yellow)
+//            .frame(width: 100, height: 100)
+        Image("RectangleFilledYellow")
+    }
+}
+
+struct RoundedRectangleFilledRed: View {
+    var body: some View {
+        Image("RectangleFilledRed")
     }
 }
 
@@ -69,12 +77,11 @@ enum Positions: String, CaseIterable, Equatable {
 
 
 // 5*5 Grid for moving
-struct FiveByFiveGrid: View {
+struct FiveByFiveSquares: View {
 
     var row: [GridItem] = Array(repeating: GridItem(.fixed(100), spacing: nil, alignment: nil), count: 5)
     
     @State var selectedItems: [Positions] = []
-
     
     var body: some View {
         LazyHGrid(rows: row, alignment: .center, spacing: 10) {
@@ -82,20 +89,6 @@ struct FiveByFiveGrid: View {
             ForEach(Positions.allCases, id: \.self) { position in
                 GridColumn(position: position, positions: $selectedItems)
             }
-            /*
-            ForEach(squareNumber, id: \.self) { item in
-                RoundedRectangleBorder()
-                    .background(item == selectedItem ? Color.yellow : Color.clear)
-                    .onTapGesture {
-                        selectedItem = item
-                    }
-//                Button(action: {didSelected.toggle()
-//                }) {
-//                    RoundedRectangleBorder()
-//                }
-            }
-        } // Loop
-             */
         }
         .padding(20)
     }
@@ -109,36 +102,17 @@ struct GridColumn: View {
     
     var body: some View {
         Button(action: {
-
             if positions.contains(position) {
                 positions.removeAll { $0 == position }
             } else {
                 positions.append(position)
             }
         }){
-            RoundedRectangleBorder()
-                .background(positions.contains(position) ? .yellow : .clear)
-        }
-    }
-}
-
-// indexing Grid
-struct Matrix {
-    let rows: Int, columns: Int
-    var grid: [Double]
-    
-    init(rows: Int, columns: Int) {
-        self.rows = rows
-        self.columns = columns
-        grid = Array(repeating: 0.0, count: rows * columns)
-    }
-    
-    subscript(row: Int, column: Int) -> Double {
-        get {
-            return grid[(row * columns) + column]
-        }
-        set {
-            grid[(row * columns) + column] = newValue
-        }
+            if positions.contains(position) {
+                RoundedRectangleFilledYellow()
+            } else {
+                RoundedRectangleBorder()
+            }
+        } // Button
     }
 }

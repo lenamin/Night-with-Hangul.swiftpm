@@ -8,7 +8,7 @@ struct ContentView: View {
             BackgroundImage()
             VStack {
                 Rabbit()
-                FiveByFiveGrid()
+                FiveByFiveSquares()
                 
             }
         }

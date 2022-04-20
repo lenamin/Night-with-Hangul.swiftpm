@@ -7,10 +7,19 @@ struct ContentView: View {
         ZStack {
             BackgroundImage()
             VStack {
-                Rabbit()
+                HStack {
+                    Spacer()
+                    Instruction()
+                    Spacer()
+                }
+                Spacer()
+                KoreanAlphabet()
                 FiveByFiveSquares()
+                Spacer()
                 
-            }
+                AnyButton(buttonText: "Next")
+                    .padding(10)
+            } // VStack
         }
     }
 }
@@ -22,6 +31,16 @@ struct Rabbit: View {
             .resizable()
             .scaledToFit()
             .frame(width: 100)
-            .padding(.bottom, 10)
+            .padding(20)
+    }
+}
+
+struct Instruction: View {
+    var body: some View {
+        Image("Night with Hangeul")
+            .resizable()
+            .frame(minWidth: 600)
+            .scaledToFit()
+            .padding(150)
     }
 }

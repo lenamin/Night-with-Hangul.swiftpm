@@ -116,3 +116,18 @@ struct GridColumn: View {
         } // Button
     }
 }
+
+struct AnyButton : View {
+    @State var buttonText: String
+    var body : some View {
+        Text(buttonText)
+            .font(.title)
+            .fontWeight(.bold)
+            .foregroundColor(.black)
+            .padding(4)
+            .border(Color(red: 255 / 255, green: 205 / 255, blue: 75 / 255), width: 1)
+            .padding(5)
+            .background(Color(red: 255 / 255, green: 205 / 255, blue: 75 / 255))
+            .cornerRadius(9)
+    }
+}

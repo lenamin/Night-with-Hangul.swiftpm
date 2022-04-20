@@ -8,19 +8,20 @@
 import Foundation
 import SwiftUI
 
-struct KoreanAlphabet: View {
+struct KoreanAlphabetRow: View {
+    var content: Content
+    
     var body: some View {
-        Image("g")
-            .scaledToFill()
-            .padding(30)
+        content.image
+            .resizable()
+            .frame(width:300)
+            .scaledToFit()
+
     }
 }
 
-//struct Giyeok: View {
-//
-//    var body: some View {
-//
-//
-//        
-//    }
-//}
+struct hangeulG: View {
+    var body: some View {
+        KoreanAlphabetRow(content: contents[0])
+    }
+}

@@ -13,7 +13,7 @@ struct ContentView: View {
                     Spacer()
                 }
                 Spacer()
-                KoreanAlphabet()
+                hangeulG()
                 FiveByFiveSquares()
                 Spacer()
                 

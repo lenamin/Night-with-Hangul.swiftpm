@@ -1,0 +1,101 @@
+[
+    {
+        "index": 1,
+        "alphabet": "g",
+        "imageName": "g",
+        "pathPosition": [1, 2, 3, 4, 5, 10, 15, 20, 25]
+        
+    },
+    {
+        "index": 2,
+        "alphabet": "n",
+        "imageName": "n",
+        "pathPosition": [1, 6, 11, 16, 21, 22, 23, 24, 25]
+        
+    },
+    {
+        "index": 3,
+        "alphabet": "d",
+        "imageName": "d",
+        "pathPosition": [1, 2, 3, 4, 5, 6, 11, 16, 21, 22, 23, 24, 25]
+        
+    },
+    {
+        "index": 4,
+        "alphabet": "l",
+        "imageName": "l",
+        "pathPosition": [1, 2, 3, 4, 5, 10, 15, 14, 13, 12, 11, 16, 21, 22, 23, 24, 25]
+        
+    },
+    {
+        "index": 5,
+        "alphabet": "m",
+        "imageName": "m",
+        "pathPosition": [1, 6, 11, 16, 21, 2, 3, 4, 5, 10, 15, 20, 25]
+        
+    },
+    {
+        "index": 6,
+        "alphabet": "b",
+        "imageName": "b",
+        "pathPosition": [1, 6, 11, 16, 21, 5, 10, 15, 20, 25, 12, 13, 14, 22, 23, 24]
+        
+    },
+    {
+        "index": 7,
+        "alphabet": "s",
+        "imageName": "s",
+        "pathPosition": [5, 9, 13, 17, 21, 19, 25]
+        
+    },
+    {
+        "index": 8,
+        "alphabet": "o",
+        "imageName": "o",
+        "pathPosition": [6, 11, 16, 22, 23, 24, 20, 15, 10, 4, 3, 2]
+        
+    },
+    {
+        "index": 9,
+        "alphabet": "j",
+        "imageName": "j",
+        "pathPosition": [1, 2, 3, 4, 5, 9, 13, 17, 21, 19, 25]
+        
+    },
+    {
+        "index": 10,
+        "alphabet": "ch",
+        "imageName": "ch",
+        "pathPosition": [3, 6, 7, 8, 9, 10, 13, 17, 21, 19, 25]
+        
+    },
+    {
+        "index": 11,
+        "alphabet": "k",
+        "imageName": "k",
+        "pathPosition": [1, 2, 3, 4, 5, 10, 15, 20, 25, 11, 12, 13, 14]
+        
+    },
+    {
+        "index": 12,
+        "alphabet": "t",
+        "imageName": "t",
+        "pathPosition": [1, 2, 3, 4, 5, 6, 11, 16, 21, 22, 23, 24, 25, 12, 13, 14, 15]
+        
+    },
+    {
+        "index": 13,
+        "alphabet": "p",
+        "imageName": "p",
+        "pathPosition": [1, 2, 3, 4, 5, 7, 12, 17, 9, 14, 19, 21, 22, 23, 24, 25]
+        
+    },
+    {
+        "index": 14,
+        "alphabet": "h",
+        "imageName": "h",
+        "pathPosition": [3, 6, 7, 8, 9, 10, 13, 17, 23, 19]
+        
+    }
+]
+

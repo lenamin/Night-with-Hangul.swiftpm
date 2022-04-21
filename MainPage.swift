@@ -15,26 +15,26 @@ struct MainPage: View {
                 BackgroundImage()
                 VStack {
                     Spacer()
+                    Spacer()
                     Rabbit()
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 40)
+                        .padding(.top, 20)
                     Title()
                     NavigationLink(destination: ContentView(), label: {
                         Image("goButton")
+                            .padding(.bottom, 10)
                     }) // NavigationLink
-                    
-                    //.navigationBarBackButtonHidden(true)
                     .navigationBarTitleDisplayMode(.inline)
+                    Spacer()
                 } // VStack
-                .overlay(Image("hangeulAll").scaledToFit().opacity(0.3).padding(.bottom, 10))
+                .overlay(Image("hangeulAll").scaledToFit().opacity(0.3))
                     
             } // ZStack
         } // NavigationView
         .navigationViewStyle(.stack)
+        .accentColor(myYellow)
         // to be seen full screen
-        
-
     }
-
 }
 
 

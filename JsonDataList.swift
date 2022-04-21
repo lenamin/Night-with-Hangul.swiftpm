@@ -10,6 +10,7 @@ import SwiftUI
 
 var contents: [Content] = load("alphabets.json")
 
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     

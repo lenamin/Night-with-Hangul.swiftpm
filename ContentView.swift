@@ -6,15 +6,18 @@ struct ContentView: View {
         ZStack {
             BackgroundImage()
             VStack {
-                Spacer()
                 contents[0].image
-                FiveByFiveSquares()
-                Spacer()
-                NavigationLink(destination: ContentViewN(), label: {
-                    AnyButton(buttonText: "Next")
-                        .padding(10)
-                })
-                Spacer()
+                HStack {
+                    NavigationLink(destination: MainPage(), label: {
+                        Image("home")
+                            .padding(.trailing, 30)
+                    })
+                    FiveByFiveSquares()
+                    NavigationLink(destination: ContentViewN(), label: {
+                        Image("next")
+                            .padding(.leading, 30)
+                    })
+                }
             } // VStack
         }
     }
@@ -313,17 +316,14 @@ struct Rabbit: View {
             .resizable()
             .scaledToFit()
             .frame(width: 100)
-            .padding(20)
+            .padding(10)
     }
 }
 
 struct Title: View {
     var body: some View {
         Image("nightWithHangeulfinal")
-            .resizable()
-            .frame(minWidth: 600)
-            .scaledToFit()
-            .padding(150)
+            .padding(10)
     }
 }
 

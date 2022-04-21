@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+let myYellow = Color.init(red: 255/255, green: 205/255, blue: 75/255)
 // background image
 struct BackgroundImage: View {
     var body: some View {
@@ -78,7 +78,7 @@ enum Positions: String, CaseIterable, Equatable {
 
 // 5*5 Grid for moving
 struct FiveByFiveSquares: View {
-
+    
     var row: [GridItem] = Array(repeating: GridItem(.fixed(100), spacing: nil, alignment: nil), count: 5)
     
     @State var selectedItems: [Positions] = []
@@ -125,9 +125,11 @@ struct AnyButton : View {
             .fontWeight(.bold)
             .foregroundColor(.black)
             .padding(4)
-            .border(Color(red: 255 / 255, green: 205 / 255, blue: 75 / 255), width: 1)
+            .border(myYellow, width: 1)
             .padding(5)
-            .background(Color(red: 255 / 255, green: 205 / 255, blue: 75 / 255))
+            .background(myYellow)
             .cornerRadius(9)
     }
 }
+
+

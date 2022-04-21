@@ -5,108 +5,117 @@
 //  Created by Lena on 2022/04/19.
 //
 
-import Foundation
 import SwiftUI
-
-struct KoreanAlphabetRow: View {
-    var content: Content
-    
-    var body: some View {
-        content.image
-            .frame(width:300)
-            .scaledToFit()
-
-    }
-}
 
 struct hangeulG: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[0])
+        contents[0].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulN: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[1])
+        contents[1].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulD: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[2])
+        contents[2].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulL: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[3])
+        contents[3].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulM: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[4])
+        contents[4].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulB: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[5])
+        contents[5].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulS: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[6])
+        contents[6].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulO: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[7])
+        contents[7].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulJ: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[8])
+        contents[8].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulCh: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[9])
+        contents[9].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulK: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[10])
+        contents[10].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulT: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[11])
+        contents[11].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulP: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[12])
+        contents[12].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
 struct hangeulH: View {
     var body: some View {
-        KoreanAlphabetRow(content: contents[13])
+        contents[13].image
+                    .frame(width:300)
+                    .scaledToFit()
     }
 }
 
-
-struct KoreanAlphabetView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        KoreanAlphabetRow(content: contents[0])
-    }
-}

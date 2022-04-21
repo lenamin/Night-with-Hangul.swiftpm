@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVKit
 
 struct Content: Codable, Identifiable, Hashable {
     var index: Int
@@ -26,3 +27,22 @@ struct Content: Codable, Identifiable, Hashable {
         case pathPosition
     }
 }
+
+
+class SoundSetting: ObservableObject {
+    static let instance = SoundSetting()
+    
+    var player: AVAudioPlayer?
+    
+    func playBgm(){
+        guard let url = Bundle.main.url(forResource: "bgm", withExtension: ".mp3") else {return}
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch let error {
+            print("Oops! \(error.localizedDescription)")
+        }
+    }
+}
+
+

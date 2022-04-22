@@ -89,7 +89,7 @@ enum Positions: String, CaseIterable, Equatable {
     }
 }
 
-
+// for playing bgm and pronunciation audio
 class SoundSetting: ObservableObject {
     static let instance = SoundSetting()
     
@@ -119,5 +119,160 @@ class SoundSetting: ObservableObject {
 
     }
     
+    func playN(){
+        guard let url = Bundle.main.url(forResource: "PronunciationN", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playD(){
+        guard let url = Bundle.main.url(forResource: "PronunciationD", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playL(){
+        guard let url = Bundle.main.url(forResource: "PronunciationL", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playM(){
+        guard let url = Bundle.main.url(forResource: "PronunciationM", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playB(){
+        guard let url = Bundle.main.url(forResource: "PronunciationB", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playS(){
+        guard let url = Bundle.main.url(forResource: "PronunciationS", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playO(){
+        guard let url = Bundle.main.url(forResource: "PronunciationO", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playJ(){
+        guard let url = Bundle.main.url(forResource: "PronunciationJ", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playCh(){
+        guard let url = Bundle.main.url(forResource: "PronunciationCh", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playK(){
+        guard let url = Bundle.main.url(forResource: "PronunciationK", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playT(){
+        guard let url = Bundle.main.url(forResource: "PronunciationT", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playP(){
+        guard let url = Bundle.main.url(forResource: "PronunciationP", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
+    
+    func playH(){
+        guard let url = Bundle.main.url(forResource: "PronunciationH", withExtension: ".mp3") else {return}
+        
+        do {
+            pronPlayer = try AVAudioPlayer(contentsOf: url)
+            pronPlayer?.play()
+        } catch let error {
+            print("It occurs \(error.localizedDescription)")
+        }
+
+    }
     
 }

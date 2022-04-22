@@ -8,19 +8,32 @@ struct ContentView: View {
             BackgroundImage()
             VStack {
                 contents[0].image
+                
+                FiveByFiveSquares()
+                    .padding(.vertical, 20)
                 HStack {
-                    NavigationLink(destination: MainPage(), label: {
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true), label: {
                         Image("home")
                             .padding(.trailing, 30)
-                    })
-                    FiveByFiveSquares()
+                    
+                    }
+                    ).navigationBarTitleDisplayMode(.inline)
+                    Spacer()
                     NavigationLink(destination: ContentViewN(), label: {
                         Image("next")
                             .padding(.leading, 30)
-                    })
+                    }).navigationBarTitleDisplayMode(.inline)
+                    Spacer()
+                    Spacer()
+                    Spacer()
                 }
+                
             } // VStack
         }
+        
         .onAppear {
             IsViewExist.view.isViewG = true
             SoundSetting.instance.playBgm()
@@ -40,10 +53,10 @@ struct ContentViewN: View {
                 contents[1].image
                 FiveByFiveSquares()
                 Spacer()
-                NavigationLink(destination: ContentViewD(), label: {
+                NavigationLink(destination: ContentViewD().navigationBarHidden(true), label: {
                     AnyButton(buttonText: "Next")
                         .padding(10)
-                })
+                }).navigationBarTitleDisplayMode(.inline)
                 Spacer()
             } // VStack
         }
@@ -390,5 +403,6 @@ struct Title: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

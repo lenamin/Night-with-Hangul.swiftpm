@@ -22,11 +22,13 @@ struct MainPage: View {
                         .padding(.bottom, 40)
                         .padding(.top, 20)
                     Title()
-                    NavigationLink(destination: ContentView(), label: {
+
+                    NavigationLink(destination: ContentView().navigationBarHidden(true), label: {
                         Image("goButton")
                             .padding(.bottom, 10)
                     }) // NavigationLink
                     .navigationBarTitleDisplayMode(.inline)
+
                     Spacer()
                 } // VStack
                 .overlay(Image("hangeulAll").scaledToFit().opacity(0.3))

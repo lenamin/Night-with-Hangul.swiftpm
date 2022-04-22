@@ -21,13 +21,16 @@ struct ContentView: View {
                 }
             } // VStack
         }
-        .onAppear(perform: {
+        .onAppear {
+            IsViewExist.view.isViewG = true
             SoundSetting.instance.playBgm()
-        })
+        }
+
     }
 }
 
 struct ContentViewN: View {
+
     var body: some View {
         
         ZStack {
@@ -43,6 +46,10 @@ struct ContentViewN: View {
                 })
                 Spacer()
             } // VStack
+        }
+        .onAppear {
+            IsViewExist.view.isViewG = false
+            IsViewExist.view.isViewN = true
         }
     }
 }
@@ -64,6 +71,10 @@ struct ContentViewD: View {
                 Spacer()
             } // VStack
         }
+        .onAppear {
+            IsViewExist.view.isViewN = false
+            IsViewExist.view.isViewD = true
+        }
     }
 }
 
@@ -83,6 +94,10 @@ struct ContentViewL: View {
                 })
                 Spacer()
             } // VStack
+        }
+        .onAppear {
+            IsViewExist.view.isViewD = false
+            IsViewExist.view.isViewL = true
         }
     }
 }
@@ -104,6 +119,10 @@ struct ContentViewM: View {
                 Spacer()
             } // VStack
         }
+        .onAppear {
+            IsViewExist.view.isViewL = false
+            IsViewExist.view.isViewM = true
+        }
     }
 }
 
@@ -123,6 +142,10 @@ struct ContentViewB: View {
                 })
                 Spacer()
             } // VStack
+        }
+        .onAppear {
+            IsViewExist.view.isViewM = false
+            IsViewExist.view.isViewB = true
         }
     }
 }
@@ -144,6 +167,10 @@ struct ContentViewS: View {
                 Spacer()
             } // VStack
         }
+        .onAppear {
+            IsViewExist.view.isViewB = false
+            IsViewExist.view.isViewS = true
+        }
     }
 }
 
@@ -163,6 +190,10 @@ struct ContentViewO: View {
                 })
                 Spacer()
             } // VStack
+        }
+        .onAppear {
+            IsViewExist.view.isViewS = false
+            IsViewExist.view.isViewO = true
         }
     }
 }
@@ -184,6 +215,10 @@ struct ContentViewJ: View {
                 Spacer()
             } // VStack
         }
+        .onAppear {
+            IsViewExist.view.isViewO = false
+            IsViewExist.view.isViewJ = true
+        }
     }
 }
 
@@ -204,6 +239,11 @@ struct ContentViewCh: View {
                 Spacer()
             } // VStack
         }
+        .onAppear {
+            IsViewExist.view.isViewJ = false
+            IsViewExist.view.isViewCh = true
+
+        }
     }
 }
 
@@ -223,6 +263,10 @@ struct ContentViewK: View {
                 })
                 Spacer()
             } // VStack
+            .onAppear {
+                IsViewExist.view.isViewCh = false
+                IsViewExist.view.isViewK = true
+            }
         }
     }
 }
@@ -244,6 +288,10 @@ struct ContentViewT: View {
                 Spacer()
             } // VStack
         }
+        .onAppear {
+            IsViewExist.view.isViewK = false
+            IsViewExist.view.isViewT = true
+        }
     }
 }
 
@@ -263,6 +311,10 @@ struct ContentViewP: View {
                 })
                 Spacer()
             } // VStack
+        }
+        .onAppear {
+            IsViewExist.view.isViewT = false
+            IsViewExist.view.isViewP = true
         }
     }
 }
@@ -284,6 +336,10 @@ struct ContentViewH: View {
                 Spacer()
             } // VStack
         }
+        .onAppear {
+            IsViewExist.view.isViewP = false
+            IsViewExist.view.isViewH = true
+        }
     }
 }
 
@@ -296,7 +352,6 @@ struct ContentViewFinish: View {
             VStack {
                 Spacer()
                 Image("conKorean")
-                    .resizable()
                     .scaledToFit()
                     .padding(.horizontal, 30)
                     .padding(.top, 30)

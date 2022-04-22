@@ -54,7 +54,6 @@ struct RoundedRectangleFilledRed: View {
 struct FiveByFiveSquares: View {
     
     var row: [GridItem] = Array(repeating: GridItem(.fixed(100), spacing: nil, alignment: nil), count: 5)
-    
     @State var selectedItems: [Positions] = []
     
     var body: some View {
@@ -91,8 +90,37 @@ struct GridColumn: View {
                 positions.removeAll { $0 == position }
             } else {
                 positions.append(position)
-                SoundSetting.instance.playG()
-
+                if IsViewExist.view.isViewG {
+                    SoundSetting.instance.playG()
+                } else if IsViewExist.view.isViewN {
+                    SoundSetting.instance.playN()
+                } else if IsViewExist.view.isViewD {
+                    SoundSetting.instance.playD()
+                } else if IsViewExist.view.isViewL {
+                    SoundSetting.instance.playL()
+                } else if IsViewExist.view.isViewM {
+                    SoundSetting.instance.playM()
+                } else if IsViewExist.view.isViewB {
+                    SoundSetting.instance.playB()
+                } else if IsViewExist.view.isViewS {
+                    SoundSetting.instance.playS()
+                } else if IsViewExist.view.isViewO {
+                    SoundSetting.instance.playO()
+                } else if IsViewExist.view.isViewJ {
+                    SoundSetting.instance.playJ()
+                } else if IsViewExist.view.isViewCh {
+                    SoundSetting.instance.playCh()
+                } else if IsViewExist.view.isViewK {
+                    SoundSetting.instance.playK()
+                } else if IsViewExist.view.isViewT {
+                    SoundSetting.instance.playT()
+                } else if IsViewExist.view.isViewP {
+                    SoundSetting.instance.playP()
+                } else if IsViewExist.view.isViewH {
+                    SoundSetting.instance.playH()
+                }
+                
+     
             }
         }){
             if positions.contains(position) {

@@ -140,7 +140,6 @@ class SoundSetting: ObservableObject {
         } catch let error {
             print("It occurs \(error.localizedDescription)")
         }
-
     }
     
     func playL(){
@@ -276,3 +275,26 @@ class SoundSetting: ObservableObject {
     }
     
 }
+
+
+
+
+class IsViewExist: ObservableObject {
+    static let view = IsViewExist()
+    
+    var isViewG: Bool = false
+    var isViewN: Bool = false
+    var isViewD: Bool = false
+    var isViewL: Bool = false
+    var isViewM: Bool = false
+    var isViewB: Bool = false
+    var isViewS: Bool = false
+    var isViewO: Bool = false
+    var isViewJ: Bool = false
+    var isViewCh: Bool = false
+    var isViewK: Bool = false
+    var isViewT: Bool = false
+    var isViewP: Bool = false
+    var isViewH: Bool = false
+}
+    

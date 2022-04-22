@@ -39,10 +39,12 @@ class SoundSetting: ObservableObject {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
+            player?.numberOfLoops = -1
         } catch let error {
             print("Oops! \(error.localizedDescription)")
         }
     }
+    
 }
 
 

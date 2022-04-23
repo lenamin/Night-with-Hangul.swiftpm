@@ -21,7 +21,7 @@ struct BackgroundImage: View {
 // Rounded Rectangle with Border
 struct RoundedRectangleBorder: View {
     var body: some View {
-        Image("RectangleBorder")
+            Image("RectangleBorder")
     }
 }
 
@@ -120,3 +120,9 @@ struct AnyButton : View {
 }
 
 
+struct SquaresView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .previewInterfaceOrientation(.portraitUpsideDown)
+    }
+}

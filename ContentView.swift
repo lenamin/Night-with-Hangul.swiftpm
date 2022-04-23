@@ -3,42 +3,36 @@ import AVKit
 
 struct ContentView: View {
     var body: some View {
-
-        ZStack {
-            BackgroundImage()
-            VStack {
-                contents[0].image
-                
-                FiveByFiveSquares()
-                    .padding(.vertical, 20)
-                HStack {
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true), label: {
-                        Image("home")
-                            .padding(.trailing, 30)
-                    
-                    }
-                    ).navigationBarTitleDisplayMode(.inline)
-                    Spacer()
-                    NavigationLink(destination: ContentViewN(), label: {
-                        Image("next")
-                            .padding(.leading, 30)
-                    }).navigationBarTitleDisplayMode(.inline)
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                }
-                
-            } // VStack
-        }
+        
+        GeometryReader { geometry in
+            
+            ZStack {
+                BackgroundImage()
+                VStack {
+                    contents[0].image
+                        .frame(width: geometry.size.width*0.3, alignment: .center)
+                    FiveByFiveSquares()
+                        .frame(width: geometry.size.width*0.7, alignment: .center)
+                        .padding(.vertical, 20)
+                    HStack {
+                        NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true), label: {
+                            Image("previous")
+                                .padding(.trailing, 30)
+                        }
+                        ).navigationBarTitleDisplayMode(.inline)
+                        NavigationLink(destination: ContentViewN(), label: {
+                            Image("next")
+                                .padding(.leading, 30)
+                        }).navigationBarTitleDisplayMode(.inline)
+                    } // HStack
+                } // VStack
+            } // ZStack
+        } // Geometry
         
         .onAppear {
             IsViewExist.view.isViewG = true
             SoundSetting.instance.playBgm()
         }
-
     }
 }
 
@@ -51,6 +45,7 @@ struct ContentViewN: View {
             VStack {
                 Spacer()
                 contents[1].image
+                    .padding(10)
                 FiveByFiveSquares()
                 Spacer()
                 NavigationLink(destination: ContentViewD().navigationBarHidden(true), label: {
@@ -372,7 +367,7 @@ struct ContentViewFinish: View {
                     .resizable()
                     .scaledToFit()
                     .padding(.horizontal, 40)
-                Rabbit()
+                //Rabbit()
                 
                 Spacer()
 
@@ -381,28 +376,22 @@ struct ContentViewFinish: View {
     }
 }
 
-// rabbit
-struct Rabbit: View {
-    var body: some View {
-        Image("rabbit-final")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 100)
-            .padding(10)
-    }
-}
 
-struct Title: View {
-    var body: some View {
-        Image("nightWithHangeulfinal")
-            .padding(10)
-    }
-}
+
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        
         ContentView()
-            .previewInterfaceOrientation(.portraitUpsideDown)
+        ContentViewN()
+        ContentViewD()
+        ContentViewL()
+        ContentViewM()
+        ContentViewB()
+        ContentViewS()
+        ContentViewO()
+        ContentViewJ()
+
     }
 }

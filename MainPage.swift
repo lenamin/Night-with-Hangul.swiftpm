@@ -8,32 +8,39 @@
 import SwiftUI
 import AVKit
 
-
 struct MainPage: View {
-
+    
     var body: some View {
         NavigationView {
-            ZStack {
-                BackgroundImage()
-                VStack {
-                    Spacer()
-                    Spacer()
-                    Rabbit()
-                        .padding(.bottom, 40)
-                        .padding(.top, 20)
-                    Title()
-
-                    NavigationLink(destination: ContentView().navigationBarHidden(true), label: {
-                        Image("goButton")
-                            .padding(.bottom, 10)
-                    }) // NavigationLink
-                    .navigationBarTitleDisplayMode(.inline)
-
-                    Spacer()
-                } // VStack
-                .overlay(Image("hangeulAll").scaledToFit().opacity(0.3))
-                    
-            } // ZStack
+            GeometryReader { geometry in
+                ZStack {
+                    BackgroundImage()
+                    VStack(spacing: 10) {
+                        Image("rabbit-final") // Rabbit
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geometry.size.width / 4)
+                            .padding(.bottom, 40)
+                            .padding(.top, 50)
+                        
+                        Image("nightWithHangeulfinal") // Title
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geometry.size.width * 0.7)
+                            .padding(5)
+                        
+                        NavigationLink(destination: ContentView().navigationBarHidden(true), label: {
+                            Image("goButton")
+                                .padding(.bottom, 10)
+                        }) // NavigationLink
+                        .navigationBarTitleDisplayMode(.inline)
+                    } // VStack
+                    .overlay(Image("hangeulAll")
+                        .resizable()
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                        .opacity(0.2))
+                } //ZStack
+            } // Geometry
         } // NavigationView
         .navigationViewStyle(.stack)
         .accentColor(myYellow)

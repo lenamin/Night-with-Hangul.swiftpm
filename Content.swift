@@ -278,7 +278,7 @@ class SoundSetting: ObservableObject {
 
 
 
-
+// for checking which view is displayed 
 class IsViewExist: ObservableObject {
     static let view = IsViewExist()
     

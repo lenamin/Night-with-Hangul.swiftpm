@@ -21,12 +21,6 @@ struct BackgroundImage: View {
 // Rounded Rectangle with Border
 struct RoundedRectangleBorder: View {
     var body: some View {
-//            RoundedRectangle(cornerRadius: 5)
-//                .stroke(lineWidth: 3)
-//                .foregroundColor(.yellow)
-//                .frame(width: 100, height: 100)
-//                .background(.black)
-//                .opacity(0.5)
         Image("RectangleBorder")
     }
 }
@@ -34,21 +28,9 @@ struct RoundedRectangleBorder: View {
 // Rounded Rectangle Filled
 struct RoundedRectangleFilledYellow: View {
     var body: some View {
-//        RoundedRectangle(cornerRadius: 5)
-//            .foregroundColor(.yellow)
-//            .frame(width: 100, height: 100)
         Image("RectangleFilledYellow")
     }
 }
-
-struct RoundedRectangleFilledRed: View {
-    var body: some View {
-        Image("RectangleFilledRed")
-    }
-}
-
-
-
 
 // 5*5 Grid for moving
 struct FiveByFiveSquares: View {
@@ -67,16 +49,6 @@ struct FiveByFiveSquares: View {
     }
     
 }
-
-//struct ButtonPlayG: View {
-//    var body: some View {
-//        Button(action: {
-//            SoundSetting.instance.playG()
-//        }){
-//
-//        }
-//    }
-//}
 
 // button which shows what users tap
 // if users tap specific position, then append it to array positions
@@ -131,39 +103,6 @@ struct GridColumn: View {
         } // Button
     }
 }
-        /*
-        Button(action: { //그리드를 버튼으로 만들면서 조건을 검사하고 있지. 그리고 조건에 따라 형태를 다르게 하고 있다
-            if positions.contains(position.rawValue) {
-                if positions.contains(contents[0].pathPosition.description) {
-                    // if once tapped, toggle again
-                    // positions.removeAll { $0 == position.rawValue }
-                    positions.removeAll() { $0 == position.rawValue }
-                    
-                    //                } else if !positions.contains(contents[0].pathPosition.description) {
-                    //                    wrongPositions.append(positions.description)
-                    //                }
-                    //                positions.removeAll { $0 == position }
-                } else {
-                    positions.append(position.rawValue)
-                }
-            })
-            {
-                if positions.contains(position.rawValue) {
-                    RoundedRectangleFilledYellow()
-                    
-                    //            } else if !contents[0].pathPosition.contains(positions.startIndex + 1) {
-                    //                RoundedRectangleFilledRed()
-                    
-                } else if !wrongPositions.contains(contents[0].pathPosition.description) {
-                    RoundedRectangleFilledRed()
-                } else {
-                    RoundedRectangleBorder()
-                }
-            } //Button
-        }
-               }
-               }
-               */
 
 struct AnyButton : View {
     @State var buttonText: String

@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "sky-pad-1.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "sky-pad-2.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }

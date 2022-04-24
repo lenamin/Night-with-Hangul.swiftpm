@@ -7,24 +7,32 @@ struct ContentView: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[0].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
-                        NavigationLink(destination: ContentViewN(), label: {
+
+                        NavigationLink(destination: ContentViewN().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -43,24 +51,31 @@ struct ContentViewN: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[1].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewD().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -78,24 +93,31 @@ struct ContentViewD: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[2].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewN().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
-                        NavigationLink(destination: ContentViewL(), label: {
+                        NavigationLink(destination: ContentViewL().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -112,24 +134,31 @@ struct ContentViewL: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[3].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewD().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
-                        NavigationLink(destination: ContentViewM(), label: {
+                        NavigationLink(destination: ContentViewM().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -146,24 +175,32 @@ struct ContentViewM: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[4].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewL().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
-                        NavigationLink(destination: ContentViewB(), label: {
+                        
+                        NavigationLink(destination: ContentViewB().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -180,24 +217,31 @@ struct ContentViewB: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[5].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewM().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewS().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -214,24 +258,31 @@ struct ContentViewS: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[6].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewB().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewO().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -248,24 +299,31 @@ struct ContentViewO: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[7].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewS().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewJ().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -282,24 +340,31 @@ struct ContentViewJ: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[8].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewO().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewCh().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -316,24 +381,31 @@ struct ContentViewCh: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[9].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewJ().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewK().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -351,24 +423,31 @@ struct ContentViewK: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[10].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewCh().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewT().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -385,24 +464,31 @@ struct ContentViewT: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[11].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewK().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewP().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -419,24 +505,31 @@ struct ContentViewP: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[12].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewT().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
                         NavigationLink(destination: ContentViewH().navigationBarBackButtonHidden(true), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -453,24 +546,31 @@ struct ContentViewH: View {
         GeometryReader { geometry in
             
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
+                    Spacer(minLength:geometry.size.height / 20)
                     contents[13].image
-                        .frame(width: geometry.size.width * 0.3, alignment: .center)
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.2, alignment: .center)
                     FiveByFiveSquares()
-                        .frame(width: geometry.size.width * 0.5, alignment: .center)
-                        .padding(.vertical, 20)
                     HStack {
                         NavigationLink(destination: ContentViewP().navigationBarBackButtonHidden(true), label: {
                             Image("previous")
-                                .padding(.trailing, 55)
+                                .padding(.trailing, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
+
                         }
                         ).navigationBarTitleDisplayMode(.inline)
-                        NavigationLink(destination: ContentViewFinish().navigationBarBackButtonHidden(true), label: {
+                        NavigationLink(destination: ContentViewFinish(), label: {
                             Image("next")
-                                .padding(.leading, 55)
+                                .padding(.leading, geometry.size.width * 0.1)
+                                .padding(.vertical, geometry.size.height * 0.03)
                         }).navigationBarTitleDisplayMode(.inline)
                     } // HStack
+                    Spacer(minLength:geometry.size.height / 20)
                 } // VStack
             } // ZStack
         } // Geometry
@@ -487,7 +587,11 @@ struct ContentViewFinish: View {
         
         GeometryReader { geometry in
             ZStack {
-                BackgroundImage()
+                Image("sky-pad")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.03)
                 VStack {
                     Image("rabbit-final")
                         .resizable()
@@ -513,14 +617,12 @@ struct ContentViewFinish: View {
     }
 }
 
-
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        
+        ContentView()
+            .previewInterfaceOrientation(.portrait)
         ContentViewFinish()
+            .previewInterfaceOrientation(.portraitUpsideDown)
 
     }
 }

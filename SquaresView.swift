@@ -8,44 +8,28 @@
 import Foundation
 import SwiftUI
 let myYellow = Color.init(red: 255/255, green: 205/255, blue: 75/255)
-// background image
-struct BackgroundImage: View {
-    var body: some View {
-        Image("sky-pad")
-            .resizable()
-            .scaledToFill()
-            .ignoresSafeArea(.all)
-    }
-}
-
-// Rounded Rectangle with Border
-struct RoundedRectangleBorder: View {
-    var body: some View {
-            Image("RectangleBorder")
-    }
-}
-
-// Rounded Rectangle Filled
-struct RoundedRectangleFilledYellow: View {
-    var body: some View {
-        Image("RectangleFilledYellow")
-    }
-}
 
 // 5*5 Grid for moving
 struct FiveByFiveSquares: View {
     
-    var row: [GridItem] = Array(repeating: GridItem(.fixed(100), spacing: nil, alignment: nil), count: 5)
+    //var row: [GridItem] = Array(repeating: GridItem(.fixed(40.0), spacing: nil, alignment: .center), count: 5)
     @State var selectedItems: [Positions] = []
     
     var body: some View {
-        LazyHGrid(rows: row, alignment: .center, spacing: 10) {
-            
-            ForEach(Positions.allCases, id: \.self) { position in
-                GridColumn(position: position, positions: $selectedItems)
-            }
-        }
-        .padding(20)
+        GeometryReader { geo in
+            LazyHGrid(rows: Array(repeating: GridItem(.flexible(), spacing: nil, alignment: .center), count: 5), alignment: .center, spacing: nil) {
+                ForEach(Positions.allCases, id: \.self) { position in
+                    GridColumn(position: position, positions: $selectedItems)
+                        //.frame(width: geo.size.width / 10, height: geo.size.width / 10)
+                } //Loop
+                .frame(width: geo.size.width / 11, height: geo.size.height / 5.5)
+
+            } //Grid
+            //.frame(width: geo.size.width / 2, height: geo.size.width / 2)
+            .position(x: geo.size.width / 2, y: geo.size.height / 2)
+        } //Geo
+
+        
     }
     
 }
@@ -91,38 +75,24 @@ struct GridColumn: View {
                 } else if IsViewExist.view.isViewH {
                     SoundSetting.instance.playH()
                 }
-                
-     
             }
         }){
             if positions.contains(position) {
-                RoundedRectangleFilledYellow()
+                Image("RectangleFilledYellow")
+                    .resizable()
+                    .frame(minWidth: 50, minHeight: 50)
             } else {
-                RoundedRectangleBorder()
+                Image("RectangleBorder")
+                    .resizable()
+                    .frame(minWidth: 50, minHeight: 50)
             }
         } // Button
     }
 }
 
-struct AnyButton : View {
-    @State var buttonText: String
-    var body : some View {
-        Text(buttonText)
-            .font(.title)
-            .fontWeight(.bold)
-            .foregroundColor(.black)
-            .padding(4)
-            .border(myYellow, width: 1)
-            .padding(5)
-            .background(myYellow)
-            .cornerRadius(9)
-    }
-}
-
-
 struct SquaresView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }

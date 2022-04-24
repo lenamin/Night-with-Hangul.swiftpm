@@ -14,30 +14,33 @@ struct MainPage: View {
         NavigationView {
             GeometryReader { geometry in
                 ZStack {
-                    BackgroundImage()
-                    VStack(spacing: 10) {
+                    Image("sky-pad")
+                        .resizable()
+                        .scaledToFill()
+                        .ignoresSafeArea(.all)
+                        .frame(width: geometry.size.width * 1.001, height: geometry.size.height * 1.09)
+                    
+                    VStack {
                         Image("rabbit-final") // Rabbit
                             .resizable()
                             .scaledToFit()
-                            .frame(width: geometry.size.width / 4)
-                            .padding(.bottom, 40)
-                            .padding(.top, 50)
+                            .frame(width: geometry.size.width / 4, height: geometry.size.height / 3)
                         
                         Image("nightWithHangeulfinal") // Title
                             .resizable()
                             .scaledToFit()
-                            .frame(width: geometry.size.width * 0.7)
-                            .padding(5)
+                            .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.1)
+                            .padding(geometry.size.width * 0.05)
                         
                         NavigationLink(destination: ContentView().navigationBarHidden(true), label: {
                             Image("goButton")
-                                .padding(.bottom, 10)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 12)
                         }) // NavigationLink
                         .navigationBarTitleDisplayMode(.inline)
                     } // VStack
                     .overlay(Image("hangeulAll")
                         .resizable()
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
                         .opacity(0.2))
                 } //ZStack
             } // Geometry
@@ -53,6 +56,7 @@ struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
         
         MainPage()
+            .previewInterfaceOrientation(.landscapeLeft)
 
     }
 }

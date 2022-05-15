@@ -23,7 +23,8 @@ This app helps you learn Korean consonants easily and fun.
 |**review**|[review](https://lenalog.notion.site/Night-with-hangeul-3-Code-Review-0e8897b20a19468184f929c0036c4596)|
 
 
-### Audio Copyright © lenamin
+### Audio Copyright 
+copyright © [lenamin](lenaminn@gmail.com)
 |file name|copyright|
 |-----|---|
 |PronunciationG.mp3|CC BY|
